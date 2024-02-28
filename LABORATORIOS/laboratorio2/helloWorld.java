@@ -10,5 +10,4 @@ public class helloWorld {
         System.out.println(num);
         scanner.close(); // Cierra el cin
     }
-    
 }

@@ -7,15 +7,19 @@ public class Ejercicio03 {
     // Función de números amigos
     public static void numerosAmigos(){
 
+        // Abrir la entrada de datos
+        Scanner scanner = new Scanner(System.in);
+
         //Entrada del primer número
         System.out.println("Ingrese el primer numero: ");
-        Scanner scanner1 = new Scanner(System.in);
-        int numero1 = scanner1.nextInt();
+        int numero1 = scanner.nextInt();
 
         //Entrada del segundo número
         System.out.println("Ingrese el segundo numero: ");
-        Scanner scanner2 = new Scanner(System.in);
-        int numero2 = scanner2.nextInt();
+        int numero2 = scanner.nextInt();
+
+        // Cierre de la entrada de datos
+        scanner.close();
         
         //Algoritmo
         int sumador = 0;
@@ -37,5 +41,5 @@ public class Ejercicio03 {
     public static void main(String[] args) {
         numerosAmigos();
     }
-    
+
 }

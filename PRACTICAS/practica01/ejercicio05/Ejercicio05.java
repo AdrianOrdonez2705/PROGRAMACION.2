@@ -64,7 +64,10 @@ public class Ejercicio05 {
 		    tuNumero = hallarDigitos(tuNumero);
 	    }
 
+        // Desplegar el numero de vida y su significado
+        String[] sentido = {"Unidad","Comunion/Division","3en1, 1en3","Estabilidad","Favor Inmerecido","Humanidad","Perfeccion","Nuevo Comienzo","Resultados Positivos"};
         System.out.println("Tu Numero de Vida es: " + tuNumero);
+        System.out.println("Su significado es: " + sentido[tuNumero-1]);
     }
 
     public static void main(String[] args) {

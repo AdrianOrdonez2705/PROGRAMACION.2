@@ -7,7 +7,7 @@ public class Ejercicio05 {
     // Función de entrada de la fecha de nacimiento
     public static void ingresarFecha(){
         // Especificar el formato
-        String formato = "\\p{1,2}/\\p{1,2}\\/p{4}";
+        String formato = "\\d{1,2}/\\d{1,2}/\\d{4}";
         Scanner scannerFormato = new Scanner(System.in);
 
         // Entrada de la fecha de nacimiento
@@ -20,7 +20,14 @@ public class Ejercicio05 {
             fecha = scannerFormato.nextLine();
         }
 
+        scannerFormato.close();
+
         System.out.println("Su fecha ingresada es " + fecha);
         
     }
+
+    public static void main(String[] args) {
+        ingresarFecha();
+    }
+
 }

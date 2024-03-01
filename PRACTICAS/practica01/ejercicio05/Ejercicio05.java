@@ -14,7 +14,7 @@ public class Ejercicio05 {
         System.out.println("Ingrese su fecha de nacimiento en el formato dd/mm/aaaa: ");
         String fecha = scannerFormato.nextLine();
 
-        // Verificar el formato correcto
+        // Verificar el formato correcto con la funcion .match() de java
         while(!fecha.matches(formato)){
             System.out.println("Formato no válido, intente de nuevo");
             fecha = scannerFormato.nextLine();
@@ -22,8 +22,22 @@ public class Ejercicio05 {
 
         scannerFormato.close();
 
+        // Imprimir la fecha ingresada para verificar
         System.out.println("Su fecha ingresada es " + fecha);
         
+        // Separar el String de fecha para "/" en un vector tipo String
+        String[] fechaSeparada = fecha.split("/");
+
+        // Convertir las fechas separadas de String a Int con la función Integer.parseInt() de java y almacenarlas en el vector
+        int dia = Integer.parseInt(fechaSeparada[0]);
+        int mes = Integer.parseInt(fechaSeparada[1]);
+        int ano = Integer.parseInt(fechaSeparada[2]);
+
+        // Imprimir los valores Int de las fechas separadas del vector para verificar
+        System.out.println("Dia: " + dia);
+        System.out.println("Mes: " + mes);
+        System.out.println("Ano: " + ano);
+
     }
 
     public static void main(String[] args) {

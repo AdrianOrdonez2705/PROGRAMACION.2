@@ -4,6 +4,16 @@ import java.util.Scanner;
 
 public class Ejercicio05 {
     
+    // Función para hallar los dígitos y sumarlos
+    public static int hallarDigitos(int tuNumero){
+        int sumador = 0;
+	    while(tuNumero > 0){
+		    sumador += tuNumero % 10;
+		    tuNumero = tuNumero/10;
+	    }
+	    return sumador;
+    }
+
     // Función de entrada de la fecha de nacimiento
     public static void ingresarFecha(){
         // Especificar el formato
@@ -38,6 +48,23 @@ public class Ejercicio05 {
         System.out.println("Mes: " + mes);
         System.out.println("Ano: " + ano);
 
+        // Llamar a la funcion
+        numeroDeVida(dia,mes,ano);
+    }
+
+     // Función para encontrar tu Número
+     public static void numeroDeVida(int dia, int mes, int ano){
+        int tuNumero = dia + mes;
+	    while(ano > 0){
+		    tuNumero += ano % 10;
+		    ano = ano/10;
+	    }
+	
+	    while(tuNumero > 9){
+		    tuNumero = hallarDigitos(tuNumero);
+	    }
+
+        System.out.println("Tu Numero de Vida es: " + tuNumero);
     }
 
     public static void main(String[] args) {

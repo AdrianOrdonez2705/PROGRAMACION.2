@@ -30,12 +30,12 @@ public class Ejercicio01{
                     contarConsonantes(texto);
                     break;
                 case 4:
-
+                    encontrarPalabra(texto,scanner);
                     break;
                 case 5:
 
                     break;
-                default:
+                case 6:
 
                     break;
             }
@@ -43,7 +43,6 @@ public class Ejercicio01{
         } while(opcion != 6);
 
         scanner.close();
-        
     }
 
     // mostrar menu
@@ -55,7 +54,7 @@ public class Ejercicio01{
         System.out.println("3. Contar consonantes");
         System.out.println("4. Encontrar una palabra en el texto");
         System.out.println("5. Reemplazar una palabra por otra");
-        System.out.println("OTRO -> SALIR");
+        System.out.println("6. SALIR");
 
     }
 
@@ -86,10 +85,11 @@ public class Ejercicio01{
 
         }
 
-        System.out.println("El numero de vocales es: " + contadorVocales);
+        System.out.println("El numero de vocales es: " + contadorVocales + "\n");
 
     }
 
+    // Contar consonantes
     public static void contarConsonantes(String texto){
         int contadorConsonantes = 0;
 
@@ -120,7 +120,25 @@ public class Ejercicio01{
             }
         }
 
-        System.out.println("El numero de consonantes es: " + contadorConsonantes);
+        System.out.println("El numero de consonantes es: " + contadorConsonantes + "\n");
+    }
+
+    // Buscar una palabra
+    public static void encontrarPalabra(String texto, Scanner scanner){
+
+        // Texto a minúsculas
+        texto = texto.toLowerCase();
+
+        System.out.println("Ingrese la palabra a encontrar: ");
+        String palabra = scanner.nextLine();
+
+        // Ver si la palabra se encuentra en el texto
+        if(texto.contains(palabra)){
+            System.out.println("La palabra: " + palabra + " SI se encuentra en el texto\n");
+        }
+        else{
+            System.out.println("La palabra: " + palabra + " NO se encuentra en el texto\n");
+        }
     }
 
 }

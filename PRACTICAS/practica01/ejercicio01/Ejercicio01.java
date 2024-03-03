@@ -21,10 +21,10 @@ public class Ejercicio01{
 
             switch(opcion){
                 case 1:
-                    ingresarTexto(scanner);
+                    texto = ingresarTexto(scanner);
                     break;
                 case 2:
-
+                    contarVocales(texto);
                     break;
                 case 3:
 
@@ -63,6 +63,31 @@ public class Ejercicio01{
     public static String ingresarTexto(Scanner scanner){
         System.out.println("Ingrese texto: ");
         return scanner.nextLine();
+    }
+
+    // Contar vocales
+    public static void contarVocales(String texto){
+        int contadorVocales = 0;
+
+        // Convertir todo el texto a minúsculas
+        texto = texto.toLowerCase();
+
+        // Definir longitud del texto
+        int longitud = texto.length();
+
+        for(int i = 0; i < longitud; i++){
+
+            // Recorrer cada letra del texto
+            char letra = texto.charAt(i);
+            
+            if(letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u'){
+                contadorVocales ++;
+            }
+
+        }
+
+        System.out.println("El numero de vocales es: " + contadorVocales);
+
     }
 
 }

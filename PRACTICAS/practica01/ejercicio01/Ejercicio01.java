@@ -27,7 +27,7 @@ public class Ejercicio01{
                     contarVocales(texto);
                     break;
                 case 3:
-
+                    contarConsonantes(texto);
                     break;
                 case 4:
 
@@ -88,6 +88,39 @@ public class Ejercicio01{
 
         System.out.println("El numero de vocales es: " + contadorVocales);
 
+    }
+
+    public static void contarConsonantes(String texto){
+        int contadorConsonantes = 0;
+
+        // Convertir el texto a minúsculas
+        texto = texto.toLowerCase();
+
+        // Definir la longitud del texto
+        int longitud = texto.length();
+    
+        for(int i = 0; i < longitud; i++){
+
+            char letra = texto.charAt(i);
+
+            if(letra == 'b' || letra == 'c' || letra == 'd' || letra == 'f' || letra == 'g' || letra == 'h' || letra == 'j' || letra == 'k' || letra == 'l'){
+                contadorConsonantes ++;
+            }
+
+            else if(letra == 'm' || letra == 'n' || letra == 'ñ' || letra == 'p' || letra == 'q' || letra == 'r' || letra == 's' || letra == 't' || letra == 'v'){
+                contadorConsonantes ++;
+            }
+
+            else if(letra == 'w' || letra == 'x' || letra == 'y' || letra == 'z'){
+                contadorConsonantes ++;
+            }
+
+            else{
+                contadorConsonantes = contadorConsonantes + 0;
+            }
+        }
+
+        System.out.println("El numero de consonantes es: " + contadorConsonantes);
     }
 
 }

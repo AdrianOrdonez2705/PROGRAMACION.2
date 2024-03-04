@@ -33,7 +33,7 @@ public class Ejercicio01{
                     encontrarPalabra(texto,scanner);
                     break;
                 case 5:
-
+                    texto = reemplazarPalabra(texto,scanner);
                     break;
                 case 6:
 
@@ -139,6 +139,35 @@ public class Ejercicio01{
         else{
             System.out.println("La palabra: " + palabra + " NO se encuentra en el texto\n");
         }
+    }
+
+    // Reemplazar una palabra
+    public static String reemplazarPalabra(String texto, Scanner scanner){
+
+        // Convertir texto a minúsculas
+        texto = texto.toLowerCase();
+
+        System.out.println("Ingrese la palabra a reemplazar: ");
+        String palabraVieja = scanner.nextLine();
+
+        // Ver si la palabra se encuentra en el texto
+        if(texto.contains(palabraVieja)){
+            System.out.println("Ingrese la nueva palabra: ");
+            String palabraNueva = scanner.nextLine();
+
+            // Reemplazar la palabra en el texto 
+            texto = texto.replace(palabraVieja, palabraNueva);
+            
+            // Imprimir nuevo texto
+            System.out.println("Nuevo texto: " + texto + "\n");
+        }
+
+        else{
+            System.out.println("La palabra " + palabraVieja + "no se encuentra en el texto\n");
+        }
+
+        return texto;
+
     }
 
 }

@@ -24,6 +24,8 @@ public class Ejercicio04 {
                 case 3:
                     deuda = facturarMonto(deuda, scanner);
                     break;
+                case 4:
+                    estadoCuentas(deuda, scanner);
                 case 5:
                     break;
             }
@@ -125,5 +127,37 @@ public class Ejercicio04 {
 
         return deuda;
         
+    }
+
+    public static void estadoCuentas(float deuda, Scanner scanner){
+        System.out.println("Nombre del estudiante: ");
+        String nombre = scanner.nextLine();
+
+        System.out.println("Carnet de Identidad: ");
+        int CI = scanner.nextInt();
+
+        String[] fecha = {"08/03/2024", "05/04/2024", "03/05/2024", "03/06/2024"};
+        
+
+        float Seg_pago = deuda * 0.147101f; // Segundo pago al 14,7101 %
+        float Otro_pago = deuda * 0.283978f;
+
+        System.out.println("\n\t\t\t\tUniversidad Catolica Boliviana 'San Pablo'\n");
+        System.out.println("\t\t\t\t\t\tSEDE LA PAZ");
+        System.out.println("\t\t\t\t\t  COTIZACION DE DEUDAS");
+        System.out.println("Documento de Identidad: " + CI + "\n");
+        System.out.println("Nombre: " + nombre + "\n");
+        System.out.println("Fecha de emision:\t03/2024\n");
+
+        System.out.println("DESCRIPCION\t\t\t       FECHA VENCIMIENTO           MONTO\tMULTA\t TOTAL");
+        System.out.println("___________________________________________________________________________________________________");
+        System.out.println("2DO. PAGO DERECHOS ACADEMICOS 1-2024\t  " + fecha[0] + "\t\t" + Seg_pago + "     0.00\t" + Seg_pago);
+        System.out.println("3ER. PAGO DERECHOS ACADEMICOS 1-2024\t  " + fecha[1] + "\t\t" + Otro_pago + "     0.00\t" + Otro_pago);
+        System.out.println("4TO. PAGO DERECHOS ACADEMICOS 1-2024\t  " + fecha[2] + "\t\t" + Otro_pago + "     0.00\t" + Otro_pago);
+        System.out.println("5TO. PAGO DERECHOS ACADEMICOS 1-2024\t  " + fecha[3] + "\t\t" + Otro_pago + "     0.00\t" + Otro_pago);
+        System.out.println("___________________________________________________________________________________________________");
+        System.out.println("\t\t\tTOTAL BOLIVIANOS A LA FECHA DE EMISION: " + deuda + "     0.00\t" + deuda);
+        System.out.println("\n");
+
     }
 }

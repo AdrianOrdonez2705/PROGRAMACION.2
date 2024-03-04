@@ -140,7 +140,7 @@ public class Ejercicio04 {
         
 
         float Seg_pago = deuda * 0.147101f; // Segundo pago al 14,7101 %
-        float Otro_pago = deuda * 0.283978f;
+        float Otro_pago = deuda * 0.283978f; // Pagos restantes al 28.3978 %
 
         System.out.println("\n\t\t\t\tUniversidad Catolica Boliviana 'San Pablo'\n");
         System.out.println("\t\t\t\t\t\tSEDE LA PAZ");

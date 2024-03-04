@@ -18,7 +18,9 @@ public class Ejercicio04 {
                 case 1:
                     deuda = agregarDeuda(deuda,scanner);
                     break;
-            
+                case 2: 
+                    deuda = descuento(deuda, scanner);
+                    break;
                 case 5:
                     break;
             }
@@ -64,5 +66,31 @@ public class Ejercicio04 {
 
         return deuda;
 
+    }
+
+    public static float descuento(float deuda, Scanner scanner){
+
+        int sub_opcion = 0;
+
+        // Submenú para aplicar descuento del 8% por PRONTO PAGO
+        System.out.println("¿Aplicar descuento del 8 % por 'PRONTO PAGO'?\n");
+        System.out.println("1. SI");
+        System.out.println("2. NO\n");
+        System.out.println("Ingrese su respuesta: ");
+        sub_opcion = scanner.nextInt();
+
+        if(sub_opcion == 1){
+
+            // Calcular descuento
+            float descuento = deuda * (8.0f/100.0f);
+            deuda = deuda - descuento;
+            System.out.println("Nueva deuda menos 8 %: " + deuda + "\n");
+        }
+        
+        if(sub_opcion == 2){
+            System.out.println("Deuda sin cambio: " + deuda + "\n");
+        }
+
+        return deuda;
     }
 }

@@ -21,6 +21,9 @@ public class Ejercicio04 {
                 case 2: 
                     deuda = descuento(deuda, scanner);
                     break;
+                case 3:
+                    deuda = facturarMonto(deuda, scanner);
+                    break;
                 case 5:
                     break;
             }
@@ -42,6 +45,7 @@ public class Ejercicio04 {
 
     }
 
+    // Agregar Deuda por toma de N materias
     public static float agregarDeuda(float deuda, Scanner scanner){
         float[] UVE = {1164, 2910, 3492, 4074, 8730};
 
@@ -68,6 +72,7 @@ public class Ejercicio04 {
 
     }
 
+    // Descuento Pronto Pago
     public static float descuento(float deuda, Scanner scanner){
 
         int sub_opcion = 0;
@@ -86,11 +91,39 @@ public class Ejercicio04 {
             deuda = deuda - descuento;
             System.out.println("Nueva deuda menos 8 %: " + deuda + "\n");
         }
-        
+
         if(sub_opcion == 2){
             System.out.println("Deuda sin cambio: " + deuda + "\n");
         }
 
         return deuda;
+    }
+
+    // Facturar un monto
+    public static float facturarMonto(float deuda, Scanner scanner){
+        int sub_opcion = 0;
+
+        // Submenú para facturar un monto
+        System.out.println("¿Facturar monto por deuda de materias (- 2300) ?\n");
+        System.out.println("1. SI");
+        System.out.println("2. NO\n");
+        System.out.println("Ingrese su respuesta: ");
+        sub_opcion = scanner.nextInt();
+
+        if(sub_opcion == 1){
+
+            // Restar monto por aplicación de factura
+            deuda = deuda - 2300.0f;
+            System.out.println("Nueva deuda por factura: " + deuda + "\n");
+        }
+
+        if(sub_opcion == 2){
+            
+            // Sin reducción por facturación
+            System.out.println("Deuda sin resto por facturación: " + deuda + "\n");
+        }
+
+        return deuda;
+        
     }
 }

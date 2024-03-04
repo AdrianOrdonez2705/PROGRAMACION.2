@@ -163,7 +163,7 @@ public class Ejercicio01{
         }
 
         else{
-            System.out.println("La palabra " + palabraVieja + "no se encuentra en el texto\n");
+            System.out.println("La palabra " + palabraVieja + " no se encuentra en el texto\n");
         }
 
         return texto;

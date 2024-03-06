@@ -1,4 +1,4 @@
-package LABORATORIOS.laboratorio2;
+package laboratorio2;
 
 public class auto {
     

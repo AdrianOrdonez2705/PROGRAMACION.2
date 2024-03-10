@@ -15,10 +15,8 @@ public class contarLetras {
     public void conteo(){
 
         int contador = 0;
-
-        palabra = palabra.toLowerCase();
         
-        setPalabra(palabra);
+        setPalabra(getPalabra().toLowerCase());
 
         for (int i = 0; i < getPalabra().length(); i++){
 

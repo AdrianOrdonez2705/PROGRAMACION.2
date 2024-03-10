@@ -4,13 +4,17 @@ public class contarLetras {
     
     public String palabra;
     public int[] counter;
+    public int counterTotal;
 
-    public contarLetras(String palabra, int[] counter){
+    public contarLetras(String palabra, int[] counter, int counterTotal){
         this.palabra = palabra;
         this.counter = counter;
+        this.counterTotal = counterTotal;
     }
 
     public void conteo(){
+
+        int contador = 0;
 
         getPalabra().toLowerCase();
 
@@ -18,10 +22,14 @@ public class contarLetras {
 
             char letra = getPalabra().charAt(i);
 
+            contador ++;
+            
             if(letra >= 'a' && letra <= 'z'){
                 getCounter()[letra - 'a'] ++;
             }
         }
+
+        setCounterTotal(contador);
     }
 
     public void mostrarResultado(){
@@ -30,6 +38,8 @@ public class contarLetras {
                 System.out.println(i + " = " + getCounter()[i - 'a']);
             }
         }
+
+        System.out.println("Total de letras: " + getCounterTotal());
     }
 
     // PALABRA
@@ -48,6 +58,15 @@ public class contarLetras {
 
     public int[] getCounter() {
         return counter;
+    }
+
+    // COUNTER TOTAL
+    public void setCounterTotal(int counterTotal) {
+        this.counterTotal = counterTotal;
+    }
+
+    public int getCounterTotal() {
+        return counterTotal;
     }
 
 }

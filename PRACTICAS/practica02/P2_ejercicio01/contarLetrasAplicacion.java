@@ -6,13 +6,14 @@ public class contarLetrasAplicacion {
     public static void main(String[] args) {
         String palabra = "";
         int[] counter = new int[26];
+        int counterTotal = 0;
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese una palabra: ");
         palabra = scanner.nextLine();
 
-        contarLetras resultado = new contarLetras(palabra,counter);
+        contarLetras resultado = new contarLetras(palabra,counter,counterTotal);
 
         resultado.conteo();
         resultado.mostrarResultado();

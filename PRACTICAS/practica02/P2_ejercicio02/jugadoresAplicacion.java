@@ -13,6 +13,7 @@ public class jugadoresAplicacion {
         player.masExpulsiones();
         player.menosAmarillas();
         player.faltasTotales();
+        player.totalPromedioGoles();
     }
 
 

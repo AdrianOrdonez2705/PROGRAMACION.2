@@ -100,8 +100,19 @@ public class jugadores {
 
     }
 
+    // Total de goles y promedio
+    public void totalPromedioGoles(){
+        int totalGoles = 0;
 
+        for (int k=0; k < getCantidadJugadores(); k++){
+            totalGoles += getGoles()[k];
+        }
 
+        double promedioGoles = totalGoles / getCantidadJugadores();
+
+        System.out.println("Total de goles: " + totalGoles);
+        System.out.println("Promedio de goles: " + promedioGoles);
+    }
 
     // CANTIDAD DE JUGADORES
     public void setCantidadJugadores(int cantidadJugadores) {

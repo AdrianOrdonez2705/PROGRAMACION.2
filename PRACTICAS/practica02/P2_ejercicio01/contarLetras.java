@@ -16,16 +16,17 @@ public class contarLetras {
 
         int contador = 0;
 
-        getPalabra().toLowerCase();
+        palabra = palabra.toLowerCase();
+        
+        setPalabra(palabra);
 
         for (int i = 0; i < getPalabra().length(); i++){
 
             char letra = getPalabra().charAt(i);
-
-            contador ++;
             
             if(letra >= 'a' && letra <= 'z'){
                 getCounter()[letra - 'a'] ++;
+                contador ++;
             }
         }
 

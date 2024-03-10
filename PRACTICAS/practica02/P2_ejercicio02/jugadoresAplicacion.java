@@ -11,6 +11,7 @@ public class jugadoresAplicacion {
 
         player.generarDatos();
         player.masExpulsiones();
+        player.menosAmarillas();
     }
 
 

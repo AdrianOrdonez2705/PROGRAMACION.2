@@ -15,6 +15,7 @@ public class jugadores {
         this.goles = goles;
     }
 
+    // Generar rojas, amarillas Y goles de cada jugador
     public void generarDatos(){
         Random random = new Random();
 
@@ -44,6 +45,7 @@ public class jugadores {
 
     }
 
+    // Mas expulsiones (rojas)
     public void masExpulsiones(){
         int mayor = 0;
         int jugadorMasExpulsado = 0;
@@ -58,6 +60,22 @@ public class jugadores {
         System.out.println("Jugador con mas expulsiones: Jugador " + jugadorMasExpulsado);
     }
 
+    // Menos amarillas
+    public void menosAmarillas(){
+
+        int menor = getTarjetasAmarillas()[0];
+        int jugadorMenosAmarillas = 1;
+
+
+        for(int i=1; i < getCantidadJugadores(); i++){
+            if (getTarjetasAmarillas()[i] < menor){
+                menor = getTarjetasAmarillas()[i];
+                jugadorMenosAmarillas = i + 1;
+            }
+        }
+
+        System.out.println("Jugador con menos tarjetas amarillas: Jugador " + jugadorMenosAmarillas);
+    }
 
     // CANTIDAD DE JUGADORES
     public void setCantidadJugadores(int cantidadJugadores) {

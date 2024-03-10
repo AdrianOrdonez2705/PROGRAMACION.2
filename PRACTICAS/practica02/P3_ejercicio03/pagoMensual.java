@@ -13,16 +13,22 @@ public class pagoMensual {
 
     public double calcularAtrasosEntrada(){
         double monto = getSalario();
-        double jornada = getSalario() / 31;
+        double jornada = getSalario() / 30;
         String[] entry = getEntrada().split(":");
 
         int horaEntry = Integer.parseInt(entry[0]);
         int minutoEntry = Integer.parseInt(entry[1]);
 
         if (horaEntry == 8){
-            if(minutoEntry >= 0 && minutoEntry < 60){
-                monto = getSalario() - (minutoEntry * jornada);
+            if(minutoEntry >= 31 && minutoEntry < 60){
+                monto = getSalario() - ((minutoEntry - 30) * jornada);
             }
+            else{
+                monto = getSalario();
+            }
+        }
+        else if(horaEntry < 8){
+            monto = getSalario();
         }
         else{
             monto = 0;

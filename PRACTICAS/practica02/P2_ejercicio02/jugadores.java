@@ -44,6 +44,20 @@ public class jugadores {
 
     }
 
+    public void masExpulsiones(){
+        int mayor = 0;
+        int jugadorMasExpulsado = 0;
+
+        for (int i=0; i < getCantidadJugadores(); i++){
+            if(getTarjetasRojas()[i] > mayor){
+                mayor = getTarjetasRojas()[i];
+                jugadorMasExpulsado = i + 1;
+            }
+        }
+
+        System.out.println("Jugador con mas expulsiones: Jugador " + jugadorMasExpulsado);
+    }
+
 
     // CANTIDAD DE JUGADORES
     public void setCantidadJugadores(int cantidadJugadores) {

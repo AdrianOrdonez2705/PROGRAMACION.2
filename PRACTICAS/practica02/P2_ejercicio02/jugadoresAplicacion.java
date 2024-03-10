@@ -10,6 +10,7 @@ public class jugadoresAplicacion {
         jugadores player = new jugadores(cantidadJugadores, tarjetasRojas, tarjetasAmarillas, goles);
 
         player.generarDatos();
+        player.masExpulsiones();
     }
 
 

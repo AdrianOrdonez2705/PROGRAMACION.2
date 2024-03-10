@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class pagoMensualAplicacion {
     public static void main(String[] args) {
         double salario = 0;
+        double jornada = 0;
         String entrada = "";
         String salida = "";
 
@@ -20,9 +21,9 @@ public class pagoMensualAplicacion {
         System.out.println("Ingrese la hora de salida (hh:mm) : ");
         salida = scanner.nextLine();
 
-        pagoMensual pago = new pagoMensual(salario,entrada,salida);
+        pagoMensual pago = new pagoMensual(salario,jornada,entrada,salida);
 
-        System.out.println("Pago mensual con atrasos: " + pago.calcularAtrasosEntrada()); 
+        pago.calcularAtrasos();
 
         scanner.close();
 

@@ -77,6 +77,32 @@ public class jugadores {
         System.out.println("Jugador con menos tarjetas amarillas: Jugador " + jugadorMenosAmarillas);
     }
 
+
+    // Mas faltas totales cometidas (rojas + amarillas)
+    public void faltasTotales(){
+
+        int mayor = 0;
+        int jugadosMasFaltas = 0;
+        int[] jugadorFaltasTotales = new int[getCantidadJugadores()];
+
+        for (int i=0; i < getCantidadJugadores(); i++){
+            jugadorFaltasTotales[i] = getTarjetasRojas()[i] + getTarjetasAmarillas()[i];
+        }
+
+        for (int j=0; j < getCantidadJugadores(); j++){
+            if (jugadorFaltasTotales[j] > mayor){
+                mayor = jugadorFaltasTotales[j];
+                jugadosMasFaltas = j + 1; 
+            }
+        }
+
+        System.out.println("Jugador con mas faltas totales cometidas: Jugador " + jugadosMasFaltas);
+
+    }
+
+
+
+
     // CANTIDAD DE JUGADORES
     public void setCantidadJugadores(int cantidadJugadores) {
         this.cantidadJugadores = cantidadJugadores;

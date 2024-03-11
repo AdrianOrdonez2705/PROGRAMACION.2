@@ -1,4 +1,4 @@
-package PRACTICAS.practica02.P3_ejercicio03;
+package PRACTICAS.practica02.P2_ejercicio03;
 
 import java.util.Scanner;
 

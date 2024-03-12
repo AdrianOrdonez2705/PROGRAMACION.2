@@ -1,10 +1,10 @@
 package PRACTICAS.practica02.P2_ejercicio03;
 
 public class pagoMensual {
-    double salario;
-    double jornada;
-    String entrada;
-    String salida;
+    public double salario;
+    public double jornada;
+    public String entrada;
+    public String salida;
 
     public pagoMensual(double salario, double jornada, String entrada, String salida){
         this.salario = salario;

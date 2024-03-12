@@ -1,7 +1,7 @@
 package PRACTICAS.practica02.P2_ejercicio05;
 
 public class secuencia {
-    int tamano;
+    public int tamano;
 
     public secuencia(int tamano){
         this.tamano = tamano;

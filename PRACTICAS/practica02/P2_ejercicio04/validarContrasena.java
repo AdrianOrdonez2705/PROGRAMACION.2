@@ -2,22 +2,31 @@ package PRACTICAS.practica02.P2_ejercicio04;
 
 public class validarContrasena{
     public String contrasena;
-    public int verifier;
+    public boolean verifier;
 
-    public validarContrasena(String contrasena, int verifier){
+    public validarContrasena(String contrasena, boolean verifier){
         this.contrasena = contrasena;
         this.verifier = verifier;
     }
 
 
     // Validar la contraseña
-    public int controlContrasena(){
+    public void controlContrasena(){
 
-        setVerifier(0);
+        setVerifier(false);
+
+        boolean longitud = false;
+        boolean minus = false;
+        int cantidadMinusculas = 0;
+        boolean mayus = false;
+        boolean numero = false;
+        boolean caracter = false;
+
+
 
         // Verificar longitud
         if(getContrasena().length() >= 10){
-            setVerifier(getVerifier() + 1);
+            longitud = true;
         }
 
         for (int i=0; i < getContrasena().length(); i++){
@@ -26,28 +35,44 @@ public class validarContrasena{
 
             // Verificar minúsculas
             if(Character.isLowerCase(letra)){
-                setVerifier(getVerifier() + 1);
+                cantidadMinusculas ++;
             }
             // Verificar mayúsculas
             else if(Character.isUpperCase(letra)){
-                setVerifier(getVerifier() + 1);
+                mayus = true;
             }
             // Verificar número
             else if(Character.isDigit(letra)){
-                setVerifier(getVerifier() + 1);
+                numero = true;
             }
             // Verificar los caracteres
             else if(letra == '%' || letra == '&' || letra == '$' || letra == '/' || letra == '*'){
-                setVerifier(getVerifier() + 1);
+                caracter = true;
+            }
+            else{
+                getVerifier();
             }
         }
 
-        // Toda la suma en el verifier() debe ser mayor o igual a 6
-        return getVerifier();
+        // Verificar la cantidad de minúsculas 
+        if(cantidadMinusculas >= 2){
+            minus = true;
+        }
+        else{
+            minus = false;
+        }
+
+        // Verificar parámetros
+        if(longitud == true && minus == true && mayus == true && numero == true && caracter == true){
+            setVerifier(true);
+        }
+        else{
+            setVerifier(false);
+        }
     }
 
     public void confirmarContrasena(){
-        if(getVerifier() >= 6){
+        if(getVerifier() == true){
             System.out.println("La contrasena es valida");
         }
         else{
@@ -65,11 +90,11 @@ public class validarContrasena{
     }
 
     // Verificador
-    public void setVerifier(int verifier) {
+    public void setVerifier(boolean verifier) {
         this.verifier = verifier;
     }
 
-    public int getVerifier() {
+    public boolean getVerifier() {
         return verifier;
     }
 }

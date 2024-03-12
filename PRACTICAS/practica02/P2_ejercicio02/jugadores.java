@@ -3,10 +3,10 @@ package PRACTICAS.practica02.P2_ejercicio02;
 import java.util.Random;
 
 public class jugadores {
-    int cantidadJugadores;
-    int[] tarjetasRojas;
-    int[] tarjetasAmarillas;
-    int[] goles;
+    public int cantidadJugadores;
+    public int[] tarjetasRojas;
+    public int[] tarjetasAmarillas;
+    public int[] goles;
 
     public jugadores(int cantidadJugadores, int[] tarjetasRojas, int[] tarjetasAmarillas, int[] goles){
         this.cantidadJugadores = cantidadJugadores;

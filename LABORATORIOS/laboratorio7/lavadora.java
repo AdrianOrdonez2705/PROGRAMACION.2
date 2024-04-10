@@ -1,4 +1,4 @@
-package LABORATORIOS.laboratorio7;
+package laboratorio7;
 
 public class lavadora extends electrodomestico {
     

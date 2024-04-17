@@ -2,14 +2,14 @@ package laboratorio7;
 
 import javax.swing.JOptionPane;
 
-public abstract class electrodomestico{
+public abstract class electrodomesticoLab7{
   
     public double precioBase;
     public String color;
     public char letra;
     public double peso;
 
-    public electrodomestico(double precioBase, String color, char letra, double peso){
+    public electrodomesticoLab7(double precioBase, String color, char letra, double peso){
         this.precioBase = precioBase;
         this.color = color;
         this.letra = letra;
